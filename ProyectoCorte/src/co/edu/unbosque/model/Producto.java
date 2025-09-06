@@ -13,9 +13,16 @@ public class Producto {
 		HERRAMIENTAS,
 		CONSTRUCCION,
 		MASCOTAS
-		
 	}
 	
-	
+	private String nombreProducto;
+	private float precio;
+	private String descripcionProducto;
+	private int cantidad;
+	private int descuento;
+	private double puntuacion;
 
+	public Producto() {
+		// TODO Auto-generated constructor stub
+	}
 }
