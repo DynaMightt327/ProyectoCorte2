@@ -2,9 +2,9 @@ package co.edu.unbosque.util.exception;
 
 public class LanzadorException {
 
-	public static void verificarCantidadProductoValida(String entradaUsuario) throws CantidadProductoException {
+	public static void verificarCantidadProductoValida(String entrada) throws CantidadProductoException {
 		try {
-			int cantidad = Integer.parseInt(entradaUsuario.trim());
+			int cantidad = Integer.parseInt(entrada.trim());
 
 			if (cantidad < 1 || cantidad > 99) {
 				throw new CantidadProductoException();
@@ -16,5 +16,7 @@ public class LanzadorException {
 			throw new CantidadProductoException();
 		}
 	}
+	
+	
 
 }
