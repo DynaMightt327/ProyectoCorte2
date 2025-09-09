@@ -16,7 +16,5 @@ public class LanzadorException {
 			throw new CantidadProductoException();
 		}
 	}
-	
-	
 
 }
