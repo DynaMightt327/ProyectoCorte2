@@ -17,10 +17,10 @@ public class LanzadorException {
 		}
 	}
 
-	public static void verificarContraseñaValida(String entrada) throws ContraseniaValida {
+	public static void verificarContraseñaValida(String entrada) throws ContraseniaException {
 
 		if (entrada.length() < 4 || entrada.length() > 8) {
-			throw new ContraseniaValida();
+			throw new ContraseniaException();
 		}
 
 		boolean tieneMayuscula = false;
@@ -38,15 +38,15 @@ public class LanzadorException {
 		}
 
 		if (!(tieneMayuscula && tieneMinuscula && tieneNumero)) {
-			throw new ContraseniaValida();
+			throw new ContraseniaException();
 		}
 
 	}
 
-	public static void verificarDireccionValida(String entrada) throws DireccionValida {
+	public static void verificarDireccionValida(String entrada) throws DireccionException {
 
 		if (entrada.length() < 5 || entrada.length() > 50) {
-			throw new DireccionValida();
+			throw new DireccionException();
 		}
 
 		boolean tieneLetra = false;
@@ -58,19 +58,19 @@ public class LanzadorException {
 			} else if (Character.isDigit(c)) {
 				tieneNumero = true;
 			} else if (!(Character.isWhitespace(c) || c == '#' || c == '-')) {
-				throw new DireccionValida();
+				throw new DireccionException();
 			}
 		}
 
 		if (!(tieneLetra && tieneNumero)) {
-			throw new DireccionValida();
+			throw new DireccionException();
 		}
 
 	}
 
-	public static void verificarNombreUsuario(String entrada) throws NombreUsuarioValido {
+	public static void verificarNombreUsuario(String entrada) throws NombreUsuarioException {
 		if (entrada.length() < 4 || entrada.length() > 8) {
-			throw new NombreUsuarioValido();
+			throw new NombreUsuarioException();
 		}
 
 		boolean tieneLetra = false;
@@ -82,32 +82,32 @@ public class LanzadorException {
 		}
 
 		if (!tieneLetra) {
-			throw new NombreUsuarioValido();
+			throw new NombreUsuarioException();
 		}
 
 	}
 
-	public static void verificarNombrePersona(String entrada) throws NombreValido {
+	public static void verificarNombrePersona(String entrada) throws NombreException {
 		if (entrada.length() < 3 || entrada.length() > 12) {
-			throw new NombreValido();
+			throw new NombreException();
 		}
 
 		for (char c : entrada.toCharArray()) {
 			if (!Character.isLetter(c)) {
-				throw new NombreValido();
+				throw new NombreException();
 			}
 		}
 
 	}
 
-	public static void verificarNumeroTarjeta(String entrada) throws NumeroTarjetaValido {
+	public static void verificarNumeroTarjeta(String entrada) throws NumeroTarjetaException {
 		if (entrada.length() != 16) {
-			throw new NumeroTarjetaValido();
+			throw new NumeroTarjetaException();
 		}
 
 		for (char c : entrada.toCharArray()) {
 			if (!Character.isDigit(c)) {
-				throw new NumeroTarjetaValido();
+				throw new NumeroTarjetaException();
 			}
 		}
 
@@ -126,14 +126,14 @@ public class LanzadorException {
 		}
 	}
 
-	public static void verificarNumeroCelular(String entrada) throws TelefonoValido {
+	public static void verificarNumeroCelular(String entrada) throws TelefonoException {
 		if (entrada.length() != 10) {
-			throw new TelefonoValido();
+			throw new TelefonoException();
 		}
 
 		for (char c : entrada.toCharArray()) {
 			if (!Character.isDigit(c)) {
-				throw new TelefonoValido();
+				throw new TelefonoException();
 			}
 		}
 

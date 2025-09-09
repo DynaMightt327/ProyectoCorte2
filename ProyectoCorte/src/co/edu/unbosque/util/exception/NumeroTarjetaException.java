@@ -1,8 +1,8 @@
 package co.edu.unbosque.util.exception;
 
-public class NumeroTarjetaValido extends Exception {
+public class NumeroTarjetaException extends Exception {
 
-	public NumeroTarjetaValido() {
+	public NumeroTarjetaException() {
 		super("El número debe tener 16 números sin espacios");
 	}
 

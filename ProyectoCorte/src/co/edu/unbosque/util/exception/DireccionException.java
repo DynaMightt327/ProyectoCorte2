@@ -1,8 +1,8 @@
 package co.edu.unbosque.util.exception;
 
-public class DireccionValida extends Exception{
+public class DireccionException extends Exception{
 
-	public DireccionValida() {
+	public DireccionException() {
 		super("Ingrese una dirección válida");
 	}
 	
