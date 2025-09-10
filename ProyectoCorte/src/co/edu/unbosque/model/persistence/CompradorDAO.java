@@ -7,7 +7,7 @@ import co.edu.unbosque.model.Comprador;
 public class CompradorDAO implements DAO<Comprador> {
 
 	private List<Comprador> listaComprador = new ArrayList<>();
-	private final String FILE_NAME = "";
+	private final String FILE_NAME = "comprador.csv";
 
 	public CompradorDAO() {
 		listaComprador = new ArrayList<>();
@@ -74,7 +74,7 @@ public class CompradorDAO implements DAO<Comprador> {
 				temp.setIdUsuario(columnas[0]);
 				temp.setContrasenia(columnas[1]);
 				temp.setDireccion(columnas[2]);
-				temp.setTelefono(columnas[3]);
+				temp.setTelefono(Long.parseLong(columnas[3]));
 				temp.setNumeroTarjeta(columnas[4]);
 				temp.setContraseniaTarjeta(columnas[5]);
 

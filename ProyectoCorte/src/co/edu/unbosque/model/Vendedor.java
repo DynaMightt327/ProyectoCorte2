@@ -13,12 +13,12 @@ public class Vendedor extends Usuario {
 		this.numeroVentas = numeroVentas;
 	}
 
-	public Vendedor(String idUsuario, String contrasenia, String direccion, String telefono) {
+	public Vendedor(String idUsuario, String contrasenia, String direccion, long telefono) {
 		super(idUsuario, contrasenia, direccion, telefono);
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vendedor(String idUsuario, String contrasenia, String direccion, String telefono, int numeroVentas) {
+	public Vendedor(String idUsuario, String contrasenia, String direccion, long telefono, int numeroVentas) {
 		super(idUsuario, contrasenia, direccion, telefono);
 		this.numeroVentas = numeroVentas;
 	}
@@ -33,7 +33,8 @@ public class Vendedor extends Usuario {
 
 	@Override
 	public String toString() {
-		return " Número de ventas del vendedor: " + numeroVentas;
+		return super.toString() + "\n - Número de ventas del vendedor: " + numeroVentas;
 	}
 
 }
+

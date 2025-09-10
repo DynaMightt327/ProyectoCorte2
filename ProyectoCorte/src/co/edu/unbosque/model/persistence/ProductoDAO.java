@@ -7,7 +7,7 @@ import co.edu.unbosque.model.Producto;
 public class ProductoDAO implements DAO<Producto> {
 
 	private List<Producto> listaProductos = new ArrayList<>();
-	private final String FILE_NAME = "";
+	private final String FILE_NAME = "Producto.csv";
 
 	public ProductoDAO() {
 		listaProductos = new ArrayList<>();
@@ -102,3 +102,4 @@ public class ProductoDAO implements DAO<Producto> {
 	}
 
 }
+
