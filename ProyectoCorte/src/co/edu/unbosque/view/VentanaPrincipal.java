@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import co.edu.unbosque.controller.Controlador;
 import co.edu.unbosque.model.Producto.Categoria;
@@ -25,6 +26,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton botonDescuento;
 	private JTextField campoBusqueda;
 	private JComboBox comboBoxUsuario;
+	// private JScrollPane scroll1;
 	// private JLabel titulo;
 
 	public VentanaPrincipal(Controlador controller) {
@@ -35,7 +37,7 @@ public class VentanaPrincipal extends JFrame {
 	private void inicializarComponentes() {
 		// configuracion Ventana (esta ya quedó lista)
 		this.setTitle("Mercado Libre");
-		this.setBounds(20, 20, 1380, 820);
+		this.setBounds(20, 20, 1280, 820);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);// finaliza el programa por completo
 		this.setResizable(false);
 		this.setLayout(null);
@@ -45,28 +47,26 @@ public class VentanaPrincipal extends JFrame {
 		// Logo mercado libre
 		ImageIcon image = new ImageIcon(getClass().getResource("logoPagina.JPG"));
 		JLabel labelImage = new JLabel(image);
-		labelImage.setBounds(30, 10, 300, 100);
+		labelImage.setBounds(20, 10, 300, 100);
 		add(labelImage);
 
 		// Anuncio envio gratis
 		ImageIcon imagen2 = new ImageIcon(getClass().getResource("envio.JPG"));
 		JLabel labelImagen2 = new JLabel(imagen2);
-		labelImagen2.setBounds(980, 10, 380, 100);
+		labelImagen2.setBounds(880, 10, 380, 100);
 		add(labelImagen2);
 
 		// boton de buscar con imagen
 		ImageIcon imagen3 = new ImageIcon(getClass().getResource("lupa.JPG"));
 		JButton buttonImagen3 = new JButton(imagen3);
-		buttonImagen3.setBounds(885, 35, 35, 35);
-		buttonImagen3.setBackground(Color.decode("#FFFFFF"));
-		buttonImagen3.setForeground(Color.decode("#144031"));
+		buttonImagen3.setBounds(835, 35, 35, 35);
 		buttonImagen3.setFocusPainted(false);
 		this.add(buttonImagen3);
-		
-		//imagen de perfil de usuario (decoracion)
+
+		// imagen de perfil de usuario (decoracion)
 		ImageIcon imagen4 = new ImageIcon(getClass().getResource("user.JPG"));
 		JLabel labelImagen4 = new JLabel(imagen4);
-		labelImagen4.setBounds(950, 120, 40, 40);
+		labelImagen4.setBounds(850, 120, 40, 40);
 		this.add(labelImagen4);
 
 		// barra de opciones
@@ -80,7 +80,8 @@ public class VentanaPrincipal extends JFrame {
 		// comboBox categoria
 		comboBoxCategoria = new JComboBox<Categoria>();// toca arreglar esto para que salgan
 		comboBoxCategoria.setBounds(250, 120, 200, 40);
-		comboBoxCategoria.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está																	// sirviendo?
+		comboBoxCategoria.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está //
+																									// sirviendo?
 		this.add(comboBoxCategoria);
 
 		// boton vender
@@ -101,22 +102,23 @@ public class VentanaPrincipal extends JFrame {
 
 		// comboBox usuario
 		comboBoxUsuario = new JComboBox<Usuario>();// toca arreglar esto para que salgan
-		comboBoxUsuario.setBounds(1000, 120, 200, 40);
-		comboBoxUsuario.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está																	// sirviendo?
+		comboBoxUsuario.setBounds(900, 120, 200, 40);
+		comboBoxUsuario.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está //
+																								// sirviendo?
 		this.add(comboBoxUsuario);
 
 		// carrito
 		ImageIcon carrito = new ImageIcon(getClass().getResource("carrito.JPG"));
 		JButton buttonCarrito = new JButton(carrito);
-		buttonCarrito.setBounds(1290, 125, 35, 35);
-		buttonCarrito.setBackground(Color.decode("#FFFFFF"));
+		buttonCarrito.setBounds(1190, 125, 35, 35);
+		buttonCarrito.setBackground(Color.decode("#F5EE27"));
 		buttonCarrito.setForeground(Color.decode("#144031"));
 		buttonCarrito.setFocusPainted(false);
 		this.add(buttonCarrito);
 
 		// campo busqueda
 		campoBusqueda = new JTextField();
-		campoBusqueda.setBounds(380, 35, 500, 35);
+		campoBusqueda.setBounds(330, 35, 500, 35);
 		campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
 		campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.getColor("white"), 1));
 		campoBusqueda.addKeyListener(new KeyListener() {
@@ -143,4 +145,53 @@ public class VentanaPrincipal extends JFrame {
 
 	}
 //no se puede olvidar hacerle getters y setters a los botones
+
+	public JButton getBotonIngresarUbicacion() {
+		return botonIngresarUbicacion;
+	}
+
+	public void setBotonIngresarUbicacion(JButton botonIngresarUbicacion) {
+		this.botonIngresarUbicacion = botonIngresarUbicacion;
+	}
+
+	public JComboBox getComboBoxCategoria() {
+		return comboBoxCategoria;
+	}
+
+	public void setComboBoxCategoria(JComboBox comboBoxCategoria) {
+		this.comboBoxCategoria = comboBoxCategoria;
+	}
+
+	public JButton getBotonVender() {
+		return botonVender;
+	}
+
+	public void setBotonVender(JButton botonVender) {
+		this.botonVender = botonVender;
+	}
+
+	public JButton getBotonDescuento() {
+		return botonDescuento;
+	}
+
+	public void setBotonDescuento(JButton botonDescuento) {
+		this.botonDescuento = botonDescuento;
+	}
+
+	public JTextField getCampoBusqueda() {
+		return campoBusqueda;
+	}
+
+	public void setCampoBusqueda(JTextField campoBusqueda) {
+		this.campoBusqueda = campoBusqueda;
+	}
+
+	public JComboBox getComboBoxUsuario() {
+		return comboBoxUsuario;
+	}
+
+	public void setComboBoxUsuario(JComboBox comboBoxUsuario) {
+		this.comboBoxUsuario = comboBoxUsuario;
+	}
+
 }
