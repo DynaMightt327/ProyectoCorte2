@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,11 +11,10 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 import co.edu.unbosque.controller.Controlador;
 
 public class VentanaPrincipal extends JFrame {
-	//no está terminada aun
+	// no está terminada aun
 
 	// deben ir los botones y ventanas aca, todo eso :p
 	private JButton botonIngresarUbicacion;
@@ -63,33 +61,33 @@ public class VentanaPrincipal extends JFrame {
 		campoBusqueda.setFont(new Font("Arial", Font.PLAIN, 14));
 		campoBusqueda.setBorder(BorderFactory.createLineBorder(Color.getColor("white"), 2));
 		campoBusqueda.addKeyListener(new KeyListener() {
-			
+
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// buscar en tiempo real();
-				
+
 			}
-			
+
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		this.add(campoBusqueda);
 		// boton buscar
 		botonBuscar = new JButton("Buscar");
-	    botonBuscar.setBounds(EXIT_ON_CLOSE, ABORT, WIDTH, HEIGHT); 
-	    botonBuscar.setBackground(Color.decode("#AED581"));
-	    botonBuscar.setForeground(Color.decode("#144031"));
-	    botonBuscar.setFocusPainted(false);
-	    this.add(botonBuscar);
+		botonBuscar.setBounds(EXIT_ON_CLOSE, ABORT, WIDTH, HEIGHT);
+		botonBuscar.setBackground(Color.decode("#AED581"));
+		botonBuscar.setForeground(Color.decode("#144031"));
+		botonBuscar.setFocusPainted(false);
+		this.add(botonBuscar);
 	}
 
 }
