@@ -103,8 +103,7 @@ public class VentanaPrincipal extends JFrame {
 		// comboBox usuario
 		comboBoxUsuario = new JComboBox<Usuario>();// toca arreglar esto para que salgan
 		comboBoxUsuario.setBounds(900, 120, 200, 40);
-		comboBoxUsuario.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está //
-																								// sirviendo?
+		comboBoxUsuario.setBorder(BorderFactory.createLineBorder(Color.getColor("yellow"), 1));// este no está //																		// sirviendo?
 		this.add(comboBoxUsuario);
 
 		// carrito
